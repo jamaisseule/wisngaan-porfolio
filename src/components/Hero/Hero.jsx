@@ -17,13 +17,18 @@ export default function Hero() {
             <span className={styles.cursor}>▮</span> HELLO WORLD, I'M
           </p>
 
-          <h1
+          {/* <h1
             className={styles.name}
             data-text={`${displayName.line1} ${displayName.line2}`}
           >
             {displayName.line1}
             <br />
             {displayName.line2}
+          </h1>
+           */}
+
+          <h1 className={styles.name} data-text={displayName}>
+            {displayName}
           </h1>
 
           <p className={styles.role}>

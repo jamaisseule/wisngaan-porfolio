@@ -11,7 +11,8 @@ export const NAV_ITEMS = ["About", "Experience", "Projects", "Skills", "Contact"
 
 export const PERSONAL_INFO = {
   name: "Ngan Truong",
-  displayName: { line1: "Ngan", line2: "Truong" },
+  displayName: "Ngan Truong",
+  // displayName: { line1: "Ngan", line2: "Truong" },
   role: "SOFTWARE ENGINEER",
    bio: `Software engineer with hands-on experience developing web & mobile applications using`,
   bioHighlight: " ReactJS, HTML5, CSS3, and Swift",
