@@ -1,0 +1,8 @@
+{
+  "name": "wisngaan-portfolio-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  }
+}
