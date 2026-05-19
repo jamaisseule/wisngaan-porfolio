@@ -43,7 +43,7 @@ export default function Hero() {
           </p>
 
           <div className={styles.cta}>
-            <a href={`mailto:${email}`} className={styles.ctaPrimary}>
+            <a href="#Contact" className={styles.ctaPrimary}>
               Contact Me
             </a>
 
