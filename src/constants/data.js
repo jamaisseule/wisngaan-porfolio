@@ -92,6 +92,20 @@ export const PROJECTS = [
     link: "https://github.com/bxthien/ojt-final-project",
     accent: "#FFD600",
   },
+  {
+    name: "V-Chatbot",
+    tag: "Team Project",
+    period: "10/2024 – 11/2024",
+    tech: [
+      "ReactJS",
+      "JavaScript",
+      "Node.js",
+      "REST APIs"
+    ],
+    desc: "A chatbot web application developed in a team environment using a modern component-based architecture similar to the VIPERS ecosystem, focused on responsive UI, API integration, and reusable frontend structure.",
+    link: "https://github.com/bxthien/OJT-GW-FirstProject",
+    accent: "#8B5CF6",
+  },
 ];
 
 export const SKILLS = {
