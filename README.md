@@ -1,4 +1,4 @@
-# Ngan Portfolio — React + Vite
+# wisngaan Portfolio — React + Vite
 
 Personal portfolio for **Truong Thai Quy Ngan**, built with React 18 and Vite.
 

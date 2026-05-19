@@ -6,9 +6,7 @@ import styles from "./Navbar.module.css";
 const scrollTo = (id) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-/**
- * Sticky top navigation with desktop links and mobile hamburger menu.
- */
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const active = useActiveSection();
@@ -21,7 +19,19 @@ export default function Navbar() {
   return (
     <>
       <nav className={styles.nav}>
-        <div className={styles.logo}>
+        <div
+          className={styles.logo}
+          onClick={() => {
+            if (window.scrollY > 100) {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            } else {
+              scrollTo("about");
+            }
+          }}
+        >
           wis<span className={styles.logoDot}>ngaan</span>
         </div>
 

@@ -1,3 +1,12 @@
+import {
+  FaEnvelope,
+  FaInstagram,
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+
+
 export const NAV_ITEMS = ["About", "Experience", "Projects", "Skills", "Contact"];
 
 export const PERSONAL_INFO = {
@@ -94,8 +103,25 @@ export const SKILLS = {
 };
 
 export const CONTACT_ITEMS = [
-  { label: "Email", value: "wisngaan17@gmail.com", href: "mailto:wisngaan17@gmail.com" },
-  { label: "Phone", value: "0789 948 756", href: "tel:0789948756" },
-  { label: "GitHub", value: "github.com/jamaisseule", href: "https://github.com/jamaisseule" },
-  { label: "Location", value: "Cam Le, Danang", href: null },
+  {
+    href: "mailto:wisngaan17@gmail.com",
+    icon: FaEnvelope,
+  },
+  {
+    href: "https://www.instagram.com/wisngaan_/",
+    icon: FaInstagram,
+  },
+  {
+    href: "https://www.facebook.com/wisngaan/",
+    icon: FaFacebook,
+  },
+  {
+    href: "https://github.com/jamaisseule",
+    icon: FaGithub,
+  },
+  {
+    href: "https://www.linkedin.com/in/ngan-truong-14b61a328/",
+    icon: FaLinkedin,
+  },
 ];
+
