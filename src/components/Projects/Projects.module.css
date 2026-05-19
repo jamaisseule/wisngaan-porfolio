@@ -8,6 +8,9 @@
   scroll-snap-type: x mandatory;
 
   padding-bottom: 12px;
+
+   scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
 /* custom scrollbar */
@@ -35,5 +38,46 @@
 @media (max-width: 600px) {
   .grid > * {
     flex: 0 0 90%;
+  }
+}
+
+.scrollHint {
+  text-align: center;
+  margin-top: 12px;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+
+  color: var(--color-muted);
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 6px;
+
+  opacity: 0.7;
+}
+
+/* animated arrows */
+.scrollHint span::before {
+  content: "››";
+  margin-right: 6px;
+
+  color: var(--color-accent);
+
+  animation: floatArrow 1.5s infinite ease-in-out;
+}
+@keyframes floatArrow {
+  0% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0.4;
   }
 }

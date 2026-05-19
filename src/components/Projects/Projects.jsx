@@ -19,6 +19,10 @@ export default function Projects() {
           </Reveal>
         ))}
       </div>
+      
+      <div className={styles.scrollHint}>
+        <span>›› swipe to see more</span>
+      </div>
     </section>
   );
 }
