@@ -21,6 +21,10 @@ const transporter = nodemailer.createTransport({
 
 app.post("/send", async (req, res) => {
   try {
+    console.log("BODY:", req.body);
+
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
@@ -49,6 +53,8 @@ ${message}
       message: "Email sent successfully",
     });
   } catch (error) {
+    console.error("EMAIL_USER:", process.env.EMAIL_USER);
+    console.error("EMAIL_PASS:", process.env.EMAIL_PASS);
     console.error(error);
 
     res.status(500).json({

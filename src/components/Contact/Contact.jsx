@@ -7,7 +7,13 @@ import SectionHeading from "../SectionHeading/SectionHeading";
 
 import styles from "./Contact.module.css";
 
+/*
+  DEV  -> localhost backend
+  PROD -> Render backend
+*/
+
 const API_URL = import.meta.env.VITE_API_URL?.trim();
+
 const SEND_ENDPOINT = API_URL
   ? `${API_URL.replace(/\/$/, "")}/send`
   : "http://localhost:5175/send";
@@ -38,16 +44,18 @@ export default function Contact() {
 
       const response = await fetch(SEND_ENDPOINT, {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify(form),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message);
+        throw new Error(data.message || "Failed to send");
       }
 
       setStatus("success");
@@ -58,7 +66,8 @@ export default function Contact() {
         message: "",
       });
     } catch (error) {
-      console.error("Contact form submit error:", error);
+      console.error("Contact form error:", error);
+
       setStatus("error");
     } finally {
       setLoading(false);
@@ -122,11 +131,15 @@ export default function Contact() {
             </button>
 
             {status === "success" && (
-              <p className={styles.success}>Message sent successfully ✦</p>
+              <p className={styles.success}>
+                Message sent successfully ✦
+              </p>
             )}
 
             {status === "error" && (
-              <p className={styles.error}>Failed to send message.</p>
+              <p className={styles.error}>
+                Failed to send message.
+              </p>
             )}
           </form>
         </div>
