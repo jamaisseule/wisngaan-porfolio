@@ -1,9 +1,14 @@
+
+
 .education {
   border-left: 2px solid;
   padding-left: 24px;
-  margin-top: 8px;
+  margin-top: 20px;
+  position: relative;
 }
 
+
+/* HEADER */
 .eduHeader {
   display: flex;
   justify-content: space-between;
@@ -11,6 +16,7 @@
   gap: 8px;
 }
 
+/* TEXT */
 .eduDegree {
   font-family: var(--font-display);
   font-weight: 700;
@@ -31,4 +37,36 @@
   gap: 2px;
   color: var(--color-muted);
   font-size: 0.78rem;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .education {
+    padding-left: 16px;
+    margin-top: 14px;
+  }
+
+  /* stack title + school */
+  .eduHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .eduDegree {
+    font-size: 0.98rem;
+  }
+
+  .eduSchool {
+    font-size: 0.75rem;
+  }
+  .eduMeta {
+    text-align: left;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 0.72rem;
+  }
 }

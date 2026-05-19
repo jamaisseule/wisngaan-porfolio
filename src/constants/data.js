@@ -31,7 +31,7 @@ export const PERSONAL_INFO = {
 
 export const EXPERIENCES = [
   {
-    title: "Software Developer & Tester",
+    title: "Software Developer",
     company: "SOPHIA SOFTWARE SOLUTIONS",
     period: "05/2025 – Present",
     location: "Danang",
@@ -54,7 +54,7 @@ export const EXPERIENCES = [
     ],
   },
   {
-    title: "Website Technical Support / Front-End Developer",
+    title: "Website Technical Support",
     company: "PHUC NGUYEN ARCHITECTURE & DESIGN",
     period: "03/2024 – 08/2024",
     location: "Danang",
