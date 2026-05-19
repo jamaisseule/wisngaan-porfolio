@@ -1,0 +1,73 @@
+.card {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.githubLink {
+  font-size: 0.78rem;
+  transition: color 0.2s;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.period {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.desc {
+  color: var(--color-subtle);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-subtle);
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}

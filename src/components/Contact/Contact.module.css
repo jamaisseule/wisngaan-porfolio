@@ -1,0 +1,59 @@
+.section {
+  padding-bottom: 120px;
+}
+
+.card {
+  border: 1px solid rgba(0, 255, 178, 0.15);
+  border-radius: 16px;
+  padding: 48px 40px;
+  background: rgba(0, 255, 178, 0.02);
+  text-align: center;
+}
+
+.ctaText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.iconRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.iconLink {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  color: var(--color-accent);
+
+  border: 1px solid rgba(0, 255, 178, 0.15);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border 0.25s ease;
+}
+
+.iconLink:hover {
+  transform: translateY(-6px);
+
+  background: rgba(0, 255, 178, 0.08);
+
+  border-color: rgba(0, 255, 178, 0.4);
+}

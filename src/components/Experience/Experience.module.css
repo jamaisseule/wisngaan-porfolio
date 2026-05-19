@@ -1,0 +1,34 @@
+.education {
+  border-left: 2px solid;
+  padding-left: 24px;
+  margin-top: 8px;
+}
+
+.eduHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eduDegree {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.eduSchool {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.eduMeta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
