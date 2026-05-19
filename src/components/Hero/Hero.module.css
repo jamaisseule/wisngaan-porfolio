@@ -31,7 +31,7 @@
   margin-bottom: 16px;
 }
 .cursor {
-  animation: blink 1.2s step-end infinite;
+  /* animation:  1.2s step-end infinite; */
 }
 
 /* Glitch name */
@@ -194,5 +194,18 @@
 
   .heroImage {
     max-width: 280px;
+  }
+}
+
+
+/* typing cursor */
+.typingCursor {
+  margin-left: 4px;
+  color: var(--color-accent);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
