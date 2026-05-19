@@ -1,64 +1,157 @@
-# wisngaan Portfolio — React + Vite
+# wisngaan — Portfolio
 
-Personal portfolio for **Truong Thai Quy Ngan**, built with React 18 and Vite.
+Modern personal portfolio built with React + Vite.
+
+Designed and developed by **Ngan Truong**.
+
+---
+
+## Features
+
+- Responsive modern UI
+- Smooth scrolling navigation
+- Animated section reveal on scroll
+- Interactive custom cursor
+- Contact form with email integration
+- Mobile-friendly layout
+- Modular reusable components
+- Clean folder structure
 
 ---
 
 ## Project Structure
 
-```
+```bash
 src/
-├── constants/
-│   └── data.js               # All resume data (single source of truth)
-├── hooks/
-│   ├── useInView.js           # IntersectionObserver — scroll-triggered reveals
-│   └── useActiveSection.js    # Tracks active nav section on scroll
-├── styles/
-│   └── global.css             # CSS variables, resets, keyframes, shared utilities
 ├── components/
-│   ├── Cursor/                # Custom dual-ring cursor (desktop)
-│   ├── Navbar/                # Sticky nav + mobile hamburger drawer
-│   ├── Hero/                  # Full-viewport intro section
-│   ├── Reveal/                # Fade-up scroll animation wrapper
-│   ├── SectionHeading/        # Reusable section title with accent bar
-│   ├── ExperienceCard/        # Single timeline experience item
-│   ├── Experience/            # Experience section (maps over data)
-│   ├── ProjectCard/           # Single project card with hover glow
-│   ├── Projects/              # Projects grid section
-│   ├── Skills/                # Skills grouped by category
-│   ├── Contact/               # Contact CTA + info grid
-│   └── Footer/                # Bottom footer bar
-├── App.jsx                    # Root layout — composes all sections
-└── main.jsx                   # React DOM entry point
+│   ├── Navbar/
+│   ├── Hero/
+│   ├── Experience/
+│   ├── Projects/
+│   ├── Skills/
+│   ├── Contact/
+│   └── Cursor/
+│   └── Footer/
+│
+├── constants/
+│   └── data.js
+│
+├── hooks/
+│   ├── useInView.js
+│   └── useActiveSection.js
+│
+├── styles/
+│   └── global.css
+│
+├── App.jsx
+└── main.jsx
+
+backend/
+├── .env
+├── server.js
+└── package.json
 ```
 
 ---
 
-## Getting Started
+## Installation
+
+### Frontend
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173).
+Frontend runs on:
+
+```bash
+http://localhost:5173
+```
 
 ---
 
-## Customization
+### Backend
 
-All content lives in **`src/constants/data.js`** — edit your name, bio, jobs, projects, and skills there. No hunting through component files.
+```bash
+cd backend
 
-Styling uses **CSS Modules** (one `.module.css` per component) plus CSS variables defined in `src/styles/global.css`.
+npm install
+
+npm run dev
+```
+
+Backend runs on:
+
+```bash
+http://localhost:5175
+```
 
 ---
 
-## Tech Stack
+## Environment Variables
 
-| Tool | Purpose |
-|------|---------|
-| React 18 | UI library |
-| Vite 5 | Build tool & dev server |
-| CSS Modules | Scoped component styles |
-| IntersectionObserver | Scroll-triggered animations |
-| Google Fonts | Syne + DM Mono |
+Create the backend environment file at:
+
+```bash
+backend/.env
+```
+
+Add:
+
+```env
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_google_app_password
+```
+
+For production, add a frontend env file at the project root:
+
+```bash
+.env
+```
+
+Add:
+
+```env
+VITE_API_URL=https://your-backend-url.com
+```
+
+You can keep local testing working with the default fallback to `http://localhost:5175/send`.
+
+> Note: Never commit `.env` files to GitHub. Use `.env.example` as the template for required environment variables and keep actual secrets local.
+
+---
+
+## Contact Form
+
+The contact section uses:
+
+- React form handling
+- Express backend API
+- Nodemailer + Gmail SMTP
+
+Messages submitted through the website are sent directly to your email inbox.
+
+---
+
+## Deployment
+
+Frontend:
+
+- Netlify
+- Vercel
+
+Backend:
+
+- Render
+- Railway
+
+Before deployment, update:
+
+```env
+VITE_API_URL=https://your-backend-url.com
+```
+
+---
+
+**wisngaan**
