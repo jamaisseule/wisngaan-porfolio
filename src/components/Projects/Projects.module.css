@@ -5,7 +5,7 @@
   overflow-x: auto;
   overflow-y: hidden;
 
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
 
   padding-bottom: 12px;
 

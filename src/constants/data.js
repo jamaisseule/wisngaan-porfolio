@@ -6,17 +6,23 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
-
-export const NAV_ITEMS = ["About", "Experience", "Projects", "Skills", "Contact"];
+export const NAV_ITEMS = [
+  "About",
+  "Experience",
+  "Projects",
+  "Skills",
+  "Contact",
+];
 
 export const PERSONAL_INFO = {
   name: "Ngan Truong",
   displayName: "Ngan Truong",
   // displayName: { line1: "Ngan", line2: "Truong" },
   role: "SOFTWARE ENGINEER",
-   bio: `Software engineer with hands-on experience developing web & mobile applications using`,
+  bio: `Software engineer with hands-on experience developing web & mobile applications using`,
   bioHighlight: " ReactJS, HTML5, CSS3, and Swift",
-  bioEnd: ".\nPassionate about crafting beautiful interfaces and delivering high-quality software solutions.",
+  bioEnd:
+    ".\nPassionate about crafting beautiful interfaces and delivering high-quality software solutions.",
   email: "wisngaan17@gmail.com",
   phone: "0789 948 756",
   github: "https://github.com/jamaisseule",
@@ -54,8 +60,8 @@ export const EXPERIENCES = [
     ],
   },
   {
-    title: "Website Technical Support",
-    company: "PHUC NGUYEN ARCHITECTURE & DESIGN",
+    title: "Website Developer",
+    company: "PHUC NGUYEN ARCHITECTURE",
     period: "03/2024 – 08/2024",
     location: "Danang",
     color: "#FF6B6B",
@@ -76,15 +82,6 @@ export const EDUCATION = {
 
 export const PROJECTS = [
   {
-    name: "LUMOSBook",
-    tag: "Final Year Project",
-    period: "12/2023 – 05/2024",
-    tech: ["ASP.NET MVC", "C#", "HTML5", "CSS3", "JavaScript", "SQL Server"],
-    desc: "A book-selling web application with role-based access control, workflow support, database interaction, and comprehensive testing.",
-    link: "https://github.com/jamaisseule/final-project",
-    accent: "#00FFB2",
-  },
-  {
     name: "VIPERS Shop",
     tag: "E-commerce Website",
     period: "11/2024 – 12/2024",
@@ -97,23 +94,39 @@ export const PROJECTS = [
     name: "V-Chatbot",
     tag: "Team Project",
     period: "10/2024 – 11/2024",
-    tech: [
-      "ReactJS",
-      "JavaScript",
-      "Node.js",
-      "REST APIs"
-    ],
+    tech: ["ReactJS", "JavaScript", "Node.js", "REST APIs"],
     desc: "A chatbot web application developed in a team environment using a modern component-based architecture similar to the VIPERS ecosystem, focused on responsive UI, API integration, and reusable frontend structure.",
     link: "https://github.com/bxthien/OJT-GW-FirstProject",
     accent: "#8B5CF6",
+  },
+  {
+    name: "LUMOSBook",
+    tag: "Final Year Project",
+    period: "12/2023 – 05/2024",
+    tech: ["ASP.NET MVC", "C#", "HTML5", "CSS3", "JavaScript", "SQL Server"],
+    desc: "A book-selling web application with role-based access control, workflow support, database interaction, and comprehensive testing.",
+    link: "https://github.com/jamaisseule/final-project",
+    accent: "#00FFB2",
   },
 ];
 
 export const SKILLS = {
   "Programming Languages": ["Java", "JavaScript", "C#", "Swift"],
-  "Frameworks & Tech": ["ReactJS", "Angular", "HTML5", "CSS3", "Tailwind CSS", "ASP.NET MVC"],
+  "Frameworks & Tech": [
+    "ReactJS",
+    "Angular",
+    "HTML5",
+    "CSS3",
+    "Tailwind CSS",
+    "ASP.NET MVC",
+  ],
   "Tools & Platforms": ["GitHub", "Jira", "Figma", "AWS (Basic)"],
-  "Technical Knowledge": ["OOP", "REST APIs", "Responsive Web Design", "Agile/Scrum"],
+  "Technical Knowledge": [
+    "OOP",
+    "REST APIs",
+    "Responsive Web Design",
+    "Agile/Scrum",
+  ],
   Databases: ["MySQL", "SQL Server"],
 };
 
@@ -139,4 +152,3 @@ export const CONTACT_ITEMS = [
     icon: FaLinkedin,
   },
 ];
-

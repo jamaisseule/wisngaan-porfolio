@@ -1,5 +1,8 @@
+/* ===================== */
+/* SHARED TIMELINE STYLE */
+/* ===================== */
 
-
+.card,
 .education {
   border-left: 2px solid;
   padding-left: 24px;
@@ -8,7 +11,9 @@
 }
 
 
-/* HEADER */
+
+/* HEADER SHARED */
+.header,
 .eduHeader {
   display: flex;
   justify-content: space-between;
@@ -16,7 +21,8 @@
   gap: 8px;
 }
 
-/* TEXT */
+/* TITLE */
+.title,
 .eduDegree {
   font-family: var(--font-display);
   font-weight: 700;
@@ -24,12 +30,16 @@
   color: var(--color-text);
 }
 
+/* SUB TITLE */
+.company,
 .eduSchool {
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   margin-top: 2px;
 }
 
+/* META */
+.meta,
 .eduMeta {
   text-align: right;
   display: flex;
@@ -39,29 +49,54 @@
   font-size: 0.78rem;
 }
 
+/* LIST (EXPERIENCE ONLY) */
+.list {
+  list-style: none;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
+.listItem {
+  display: flex;
+  gap: 10px;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
 
+/* ===================== */
+/* 📱 MOBILE - UNIFIED STYLE */
+/* ===================== */
 
 @media (max-width: 600px) {
+  .card,
   .education {
     padding-left: 16px;
     margin-top: 14px;
   }
 
-  /* stack title + school */
+  /* STACK LEFT SIDE */
+  .header,
   .eduHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
   }
 
+  .title,
   .eduDegree {
     font-size: 0.98rem;
   }
 
+  .company,
   .eduSchool {
     font-size: 0.75rem;
   }
+
+  /* 🔥 IMPORTANT: META SAME STYLE FOR BOTH */
+  .meta,
   .eduMeta {
     text-align: left;
     flex-direction: row;

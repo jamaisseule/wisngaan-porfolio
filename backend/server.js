@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5175;
 app.use(cors());
 app.use(express.json());
 
+/* MAIL TRANSPORTER */
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -19,27 +21,21 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+/* SEND MAIL API */
+
 app.post("/send", async (req, res) => {
   try {
-    console.log("BODY:", req.body);
-
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
-      return res.status(400).json({
-        message: "Missing fields",
-      });
+      return res.status(400).json({ message: "Missing fields" });
     }
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      replyTo: email,
       to: process.env.EMAIL_USER,
-
+      replyTo: email,
       subject: `Portfolio Message from ${name}`,
-
       text: `
 Name: ${name}
 Email: ${email}
@@ -49,19 +45,15 @@ ${message}
       `,
     });
 
-    res.status(200).json({
-      message: "Email sent successfully",
-    });
+    res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    console.error("EMAIL_USER:", process.env.EMAIL_USER);
-    console.error("EMAIL_PASS:", process.env.EMAIL_PASS);
-    console.error(error);
+    console.error("MAIL ERROR:", error);
 
-    res.status(500).json({
-      message: "Failed to send email",
-    });
+    res.status(500).json({ message: "Failed to send email" });
   }
 });
+
+/* START SERVER */
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

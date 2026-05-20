@@ -1,22 +1,17 @@
 import { useState } from "react";
-
 import { CONTACT_ITEMS } from "../../constants/data";
 
 import Reveal from "../Reveal/Reveal";
 import SectionHeading from "../SectionHeading/SectionHeading";
-
 import styles from "./Contact.module.css";
 
-/*
-  DEV  -> localhost backend
-  PROD -> Render backend
-*/
+/* API CONFIG (DEV + PROD) */
 
-const API_URL = import.meta.env.VITE_API_URL?.trim();
+const API_URL = import.meta.env.VITE_API_URL;
 
 const SEND_ENDPOINT = API_URL
   ? `${API_URL.replace(/\/$/, "")}/send`
-  : "http://localhost:5175/send";
+  : "/send";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -29,10 +24,7 @@ export default function Contact() {
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -44,18 +36,16 @@ export default function Contact() {
 
       const response = await fetch(SEND_ENDPOINT, {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(form),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Failed to send");
+        throw new Error(data.message || "Send failed");
       }
 
       setStatus("success");
@@ -65,9 +55,8 @@ export default function Contact() {
         email: "",
         message: "",
       });
-    } catch (error) {
-      console.error("Contact form error:", error);
-
+    } catch (err) {
+      console.error(err);
       setStatus("error");
     } finally {
       setLoading(false);
@@ -82,11 +71,11 @@ export default function Contact() {
         <div className={styles.card}>
           <p className={styles.ctaText}>LET’S CONNECT</p>
 
-          {/* SOCIAL ICONS */}
+          {/* SOCIAL */}
           <div className={styles.iconRow}>
-            {CONTACT_ITEMS.map(({ href, icon: Icon }, index) => (
+            {CONTACT_ITEMS.map(({ href, icon: Icon }, i) => (
               <a
-                key={index}
+                key={i}
                 href={href}
                 target="_blank"
                 rel="noreferrer"
@@ -98,9 +87,8 @@ export default function Contact() {
           </div>
 
           {/* FORM */}
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className={styles.form}>
             <input
-              type="text"
               name="name"
               placeholder="Your name"
               value={form.name}
@@ -109,8 +97,8 @@ export default function Contact() {
             />
 
             <input
-              type="email"
               name="email"
+              type="email"
               placeholder="Your email"
               value={form.email}
               onChange={handleChange}
@@ -131,15 +119,11 @@ export default function Contact() {
             </button>
 
             {status === "success" && (
-              <p className={styles.success}>
-                Message sent successfully ✦
-              </p>
+              <p className={styles.success}>Message sent successfully ✦</p>
             )}
 
             {status === "error" && (
-              <p className={styles.error}>
-                Failed to send message.
-              </p>
+              <p className={styles.error}>Failed to send message</p>
             )}
           </form>
         </div>
